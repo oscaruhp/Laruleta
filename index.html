@@ -79,7 +79,7 @@ Jugo de limón
             </div>
                 </div>
                 <div class="col-2">
-                    
+                    				<br/>
                     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- anuncio160_600 -->
 <ins class="adsbygoogle"
@@ -166,33 +166,20 @@ Jugo de limón
                      'callbackAfter': 'DibujarTriangulo()'
                  }
              });
-
-            
+    
                DibujarTriangulo();
-
-            
-
-
-         }
-       
-
-       
-        
-         function leerElementos() {
-             
+	  }
+        function leerElementos() {
                   txtListaElementos=$('#ListaElementos').val().trim();
                   var Elementos = txtListaElementos.split('\n');
-                 
                   var ElementosRuleta= [];
-
-                  Elementos.forEach(function (Elemento) {
+	          Elementos.forEach(function (Elemento) {
                       if(Elemento){
                       ElementosRuleta.push({ 'fillStyle': "#" + ((1 << 24) * Math.random() | 0).toString(16), 'text': Elemento });
                   }
                   });
                   DibujarRuleta(ElementosRuleta);
-
-              } 
+	     } 
          leerElementos();
 
  
