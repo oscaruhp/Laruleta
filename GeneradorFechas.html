@@ -1,0 +1,67 @@
+
+ <!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+<script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+<title>Generador de fechas</title>
+</head> 
+<body>
+<div class="container-fluid">
+<br/>
+Fecha Inicial:<input type="date" value="2017-08-22" name="finicial" id="finicial" />
+Fecha Final:<input type="date" value="2018-02-28" name="ffinal" id="ffinal" />
+<br/>
+   <input type="checkbox" class="dias" name="dias[]" value="1" > Lunes
+   <input type="checkbox" class="dias" name="dias[]" value="2" > Martes
+   <input type="checkbox" class="dias" name="dias[]" value="3" > Miercoles
+   <input type="checkbox" class="dias" name="dias[]" value="4" > Jueves
+   <input type="checkbox" class="dias" name="dias[]" value="5" > Viernes
+   <input type="checkbox" class="dias" name="dias[]" value="6" > Sabado
+   <input type="checkbox" class="dias" name="dias[]" value="0" > Domingo
+<br/>
+<input type="button" value="Listar fechas" onclick="CrearListaFechas()"/>
+
+<div id="Salida"></div>
+</div>
+<script>
+var nombreMeses = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+var diasSemana =["Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado"];
+
+
+function CrearListaFechas(){
+
+var FechaInicial =$('#finicial').val();
+var FechaFinal = $('#ffinal').val();
+
+var movimientoFechas = new Date(FechaInicial);
+var strFechaInicial = FechaInicial;
+var vMes=0; 
+var strSalida=""; 
+  var diasSeleccionados = new Array(); 
+    $.each($("input[name='dias[]']:checked"), function() {diasSeleccionados.push( parseInt( $(this).val() ));});
+    
+    console.log(diasSeleccionados);
+    
+while (strFechaInicial <= FechaFinal){
+    
+
+//var diasSeleccionados = [3,4,6];
+  var strFechaInicial = movimientoFechas.toISOString().slice(0,10);
+    var FechaTmp=new Date(strFechaInicial);
+    if(vMes!=FechaTmp.getMonth()){
+      strSalida=strSalida+"<br/><strong>"+nombreMeses[FechaTmp.getMonth()]+" "+FechaTmp.getFullYear()+"</strong><br/>";vMes=FechaTmp.getMonth();
+    }
+	if(diasSeleccionados.indexOf(FechaTmp.getDay())>-1){
+		strSalida=strSalida+(diasSemana[FechaTmp.getDay()]+", "+movimientoFechas.getDate()+" "+nombreMeses[FechaTmp.getMonth()]+" de "+FechaTmp.getFullYear()+"<br/>");
+	}
+	movimientoFechas.setDate(movimientoFechas.getDate()+1);
+};
+$('#Salida').html(strSalida);
+}
+</script>
+</body>
+</html>
