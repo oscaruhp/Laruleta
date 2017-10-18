@@ -1,16 +1,26 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>La ruleta de la vida</title>
     <script src="js/Winwheel.min.js"></script>
     <script src="js/TweenMax.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <link rel="stylesheet" href="css/bootstrap.min.css"/>
     <script src="js/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
     <link href="css/sweetalert.css" rel="stylesheet" />
+    <style type="text/css">
+        body {background-color: #000000;
+            background-image: url("img/bg.jpg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: 853px 480px;
+            background-size: 100% 100%;
+        }
+    </style>
 </head>
-<body>
+<body background="img/bg.jpg">
     <form id="form1" runat="server">
     <div>
         <style>
@@ -29,8 +39,7 @@
         <div class="container-fluid">
 
             <div class="row">
-                <div class="col-3 text-center">  
-				<h1>La Ruleta</h1>
+                <div class="col-3 text-center">
                     <br />
                        <a href="http://develoteca.com/" rel="home">
                            <img  src="img/La-ruleta-de-la-vida.png" />
