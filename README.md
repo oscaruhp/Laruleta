@@ -1,3 +1,2 @@
-# Laruleta
-Ruleta que te permite rifar elementos.
-https://oscaruhp.github.io/Laruleta/
+# La Ruleta De La Vida
+Juego en JS - HTML - jQuery Sobre Operaciones Psicologicas

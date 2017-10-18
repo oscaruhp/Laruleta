@@ -1,38 +1,26 @@
-
 <!DOCTYPE html>
-
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>La ruleta de la muerte</title>
+    <title>La ruleta de la vida</title>
     <script src="js/Winwheel.min.js"></script>
-
-<script src="js/TweenMax.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="js/TweenMax.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <link rel="stylesheet" href="css/bootstrap.min.css"/>
     <script src="js/sweetalert.min.js"></script>
     <link href="css/sweetalert.css" rel="stylesheet" />
-    
-  <meta property="og:url"                content="https://oscaruhp.github.io/Laruleta/" />
-<meta property="og:type"               content="article" />
-<meta property="og:title"              content="La ruleta (Rifa cosas)" />
-<meta property="og:description"        content="Con esta ruleta online puedes rifar lo que gustes, solo llena la lista y genera tu ruleta" />
-<meta property="og:image"              content="https://oscaruhp.github.io/Laruleta/img/ruleta.jpg" />
-
 </head>
 <body>
     <form id="form1" runat="server">
-
     <div>
         <style>
          #canvasContainer {
             background-image: url(img/Muerte.png);
             background-repeat: no-repeat;  
             background-position: center;   
-            width: 700px;                  
+            width: 700px;
             height: 700px;
 			cursor:pointer;
-		
         }
 
         </style>
@@ -106,6 +94,7 @@ Jugo de limón
              winningSegment = objRuleta.getIndicatedSegment();
              swal({
                  title: " ¡ "+winningSegment.text+" !",
+                 text: "Este es el cuerpo "+winningSegment.text,
                
                  imageUrl: "img/Muerte.png",
                  showCancelButton: true,
