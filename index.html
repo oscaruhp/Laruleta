@@ -9,14 +9,16 @@
     <!--jQuery-->
     <script src="js/jquery-3.2.1.slim.min.js"></script>
     <!--Sweet Alert-->
-    <link href="css/sweetalert.css" rel="stylesheet" />
-    <script src="js/sweetalert.min.js"></script>
+    <link href="css/sweetalert2.css" rel="stylesheet" />
+    <script src="js/sweetalert2.min.js"></script>
     <!--Bootstrap-->
     <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="css/font-awesome.min.css"/>
     <!--Imagen de Fondo-->
     <style type="text/css">
         body {
-            background-image: url("img/bg.jpg");
+            background-image: url("src/img/bg.jpg");
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-position: center;
@@ -32,8 +34,8 @@
             <!--Canvas Rueda-->
             <style>
                 #canvasContainer{
-                    background-image: url(img/rueda_logo.png);
-                    background-repeat: no-repeat;  
+                    background-image: url(src/img/rueda_logo.png);
+                    background-repeat: no-repeat;
                     background-position: center;
                     width: 700px;
                     height: 690px;
@@ -44,7 +46,7 @@
                 <div class="row">
                      <br />
                     <div class="col-sm-4">
-                        <img src="img/La-ruleta-de-la-vida.png" class="img-fluid" alt="Responsive image" />
+                        <img src="src/img/La-ruleta-de-la-vida.png" class="img-fluid" alt="Responsive image" />
                         <!--Botones-->
                         <div class="d-flex justify-content-start">
                         <div class="container-fluid" class="align-center" style="width: 70%;" >
@@ -77,7 +79,26 @@
       <canvas>
              <script>
                  function alerta_auto(){
-                     swal({title: "Autoconocimiento!",text: "Es un proceso reflexivo en el cual una persona adquiere noción de su yo, de lo que lo caracteriza, de sus cualidades y defectos, de sus limitaciones, necesidades, aficiones y temores",})}
+                     swal({
+                         title: '<i>Autoconocimiento</i> ',
+                         imageUrl: 'src/img/alert.png',
+                         imageWidth: 221,
+                         imageHeight: 137,
+                         imageAlt: 'Custom image',
+                         html:
+                         ' <h4><p align="justify"><br />Es un proceso reflexivo en el cual una persona adquiere noción de su yo, de lo que lo caracteriza, de sus cualidades y defectos, de sus limitaciones, necesidades, aficiones y temores,<br /> ' + 
+                         '<br /><b>ACTIVIDAD</b>: Toma papel y lápiz y realiza una lista donde nombre tus características, debilidades y fortalezas.<br /><br /> Al mismo tiempo, deberás realizar una línea de tiempo donde construyas tu proyecto de vida, desde el centro de tu vida (Ahora) y lo que te propones a futuro. <br />Tiempo estimado: 5 min<p></h4>',
+                         showCloseButton: true,
+                         showCancelButton: true,
+                         focusConfirm: false,
+                         confirmButtonText:
+                         '<i class="fa fa-thumbs-up"></i> Great!',
+                         confirmButtonAriaLabel: 'Thumbs up, great!',
+                         cancelButtonText:
+                         '<i class="fa fa-thumbs-down"></i>',
+                         cancelButtonAriaLabel: 'Thumbs down',
+                     })
+                 }
                  function alerta_empa(){
                      swal({title: "Empatía!",text: "Es una habilidad interpersonal basada en la comprensión de opiniones, sentimientos y emociones que otra persona experimenta.",})}
                  function alerta_coma(){
@@ -188,7 +209,7 @@
        }
 		</script>
 	</canvas>
-                        <audio src="img/ambiente.mp3" controls autoplay loop>
+                        <audio src="src/audio/ambiente.mp3" controls autoplay loop>
                             <p>Tu navegador no implementa el elemento audio</p>
                         </audio>
                         </div>
