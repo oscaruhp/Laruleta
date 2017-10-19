@@ -2,11 +2,11 @@
 Juego en JS - HTML - jQuery Sobre Operaciones Psicologicas
 
 # Desarrollado por:
-## Jaime Lopez - https://twitter.com/JaimeLopezR - automatic!
+## Jaime Lopez
 [Twitter](https://twitter.com/JaimeLopezR)
 
-## Sergio Veloza - http://github.com - automatic!
+## Sergio Veloza
 [Twitter](https://twitter.com/sergioveloza)
 
-## Andres Gonzalez - http://github.com - automatic!
+## Andres Gonzalez
 [GitHub](https://github.com/andago9)
