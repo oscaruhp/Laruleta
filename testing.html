@@ -93,46 +93,43 @@
        function Mensaje() {
            var SegmentoSeleccionado =
            winningSegment = miRuleta.getIndicatedSegment();
-
            swal({
                title: " ¡ "+winningSegment.toxt+" !",
+               text: " "+winningSegment.descripcion,
+               imageUrl: "img/ruleta-logo.png",
+               cancelButton: true,
+               confirmButtonColor: "#e74c3c",
+               confirmButtonText: "Actividad",
+               cancelButtonText: "Descripcion",
+               closeOnConfirm: true,
+               closeOnCancel: true,
                buttons: {
-                   again: "Volver a Tirar",
-                   catch: {
-                       text: "Descripcion",
-                       value: "Descripcion",
-                   },
-                   defeat: true,
-  },
-})
+                   Actividad: "Actividad",
+                   Descripcion:"Descripcion",
+               },
+           })
 .then((value) => {
   switch (value) {
- 
-    case "again":
-      swal("Preciona Girar Ruleta");
+    case "Actividad":
+      swal({text: "" +winningSegment.actividad,});
       break;
+ 
     case "Descripcion":
-          swal({
-              title: " ¡ "+winningSegment.toxt+" !",
-              text: " "+winningSegment.descripcion,})
-              .then((value) => {
-              title: " ¡ "+winningSegment.toxt+" !",
-              swal({text: " "+winningSegment.actividad,});
-          });
+      swal({text: "" +winningSegment.descripcion,});
       break;
  
     default:
-      swal("Preciona Girar Ruleta");
+      swal("Vuelve a girar!");
   }
 });
-           
+ 
            //Reinicio de Ruleta
            miRuleta.stopAnimation(false);
            miRuleta.rotationAngle = 0;
            miRuleta.draw();
            dibujarIndicador();
        }
-    dibujarIndicador();
+	dibujarIndicador();
     function dibujarIndicador() {
             var ctx = miRuleta.ctx;
               distnaciaX = 150;
