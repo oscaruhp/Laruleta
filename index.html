@@ -30,7 +30,6 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <br />
             <!--Canvas Rueda-->
             <style>
                 #canvasContainer{
@@ -44,7 +43,6 @@
             </style>
             <div class="container-fluid">
                 <div class="row">
-                     <br />
                     <!--Logotipo ruleta-->
                     <div class="col-sm-4">
                         <img src="src/img/La-ruleta-de-la-vida.png" class="img-fluid" alt="Responsive image" />
@@ -71,12 +69,11 @@
                             <br />
                             <!--Boton Girar-->    
                     <input type="button" onclick="miRuleta.startAnimation();" class="btn btn-primary btn-lg btn-block" value="Girar Ruleta"/>
-                            <br />
-          <div id="canvasContainer">
-    <canvas id="canvas" width="700" height="690">
-        Canvas not supported, please user another browser.
-    </canvas>
-</div>
+                            <div id="canvasContainer">
+                                <canvas id="canvas" width="700" height="690">
+                                    Canvas not supported, please user another browser.
+                                </canvas>
+                            </div>
       <canvas>
              <script>
                  function alerta_auto(){
@@ -93,15 +90,11 @@
                          ' <h4><p align="justify"><br />Es un proceso reflexivo en el cual una persona adquiere noción de su yo, de lo que lo caracteriza, de sus cualidades y defectos, de sus limitaciones, necesidades, aficiones y temores,<br /> ' + 
                          '<br /><b>ACTIVIDAD:</b> Toma papel y lápiz y realiza una lista donde nombre tus características, debilidades y fortalezas.<br /><br /> Al mismo tiempo, deberás realizar una línea de tiempo donde construyas tu proyecto de vida, desde el centro de tu vida (Ahora) y lo que te propones a futuro. <br /><br />Tiempo estimado: 5 min<p></h4>',
                          showCloseButton: true,
-                         showCancelButton: true,
                          focusConfirm: false,
                          confirmButtonText:
                          '<i class="fa fa-thumbs-up"></i> ¡Genial!',
                          confirmButtonAriaLabel: 'Thumbs up, great!',
-                         cancelButtonText:
-                         '<i class="fa fa-thumbs-down"></i>',
-                         cancelButtonAriaLabel: 'Thumbs down',
-                     })
+                         })
                  }
                  function alerta_empa(){
                       swal({
@@ -310,8 +303,6 @@
                             '<i class="fa fa-thumbs-down"></i>',
                             cancelButtonAriaLabel: 'Thumbs down',
                             })}
-                 
-                 
     var miRuleta = new Winwheel({
         'numSegments': 10, // Número de segmentos
         'outerRadius': 270, // Radio externo
@@ -338,45 +329,39 @@
       function Mensaje() {
            var SegmentoSeleccionado =
            winningSegment = miRuleta.getIndicatedSegment();
-           swal({
-               title: " ¡ "+winningSegment.toxt+" !",
-               buttons: {
-                   again: "Volver a Tirar",
-                   catch: {
-                       text: "Descripcion",
-                       value: "Descripcion",
-                   },
-                   actividad: {
-                       text:"Actividad",
-                       value:"Actividad",
-                   },
-  },
-})
-.then((value) => {
-  switch (value) {
- 
-    case "again":
-          swal("Girando la Ruleta...");
-          miRuleta.startAnimation()
-          break;
-    case "Descripcion":
-          swal({
-              title: " ¡ "+winningSegment.toxt+" !",
-              text: " "+winningSegment.descripcion,})
-              .then((value) => {
-              title: " ¡ "+winningSegment.toxt+" !",
-              swal({text: " "+winningSegment.actividad,});
-          });
-      break;
-    case "Actividad":
-          swal({title: winningSegment.toxt, text: winningSegment.actividad,})
-          break;
- 
-    default:
-      swal("Preciona Girar Ruleta");
-  }
-});
-           
+          var MensajeSeleccionado= winningSegment.number;
+          switch (MensajeSeleccionado){
+              case "1":
+                  alerta_auto();
+                  break;
+              case "2":
+                  alerta_empa();
+                  break;
+              case "3":
+                  alerta_coma();
+                  break;
+              case "4":
+                  alerta_relai();
+                  break;
+              case "5":
+                  alerta_tode();
+                  break;
+              case "6":
+                  alerta_mpc();
+                  break;
+              case "7":
+                  alerta_penc();
+                  break;
+              case "8":
+                  alerta_pencri();
+                  break;
+              case "9":
+                  alerta_mes();
+                  break;
+              case "10":
+                  alerta_Mte();
+                  break;
+          }
            //Reinicio de Ruleta
            miRuleta.stopAnimation(false);
            miRuleta.rotationAngle = 0;
@@ -402,9 +387,9 @@
        }
 		</script>
 	</canvas>
-                        <audio src="src/audio/ambiente.mp3" controls autoplay loop>
-                            <p>Tu navegador no implementa el elemento audio</p>
-                        </audio>
+    <audio src="src/audio/ambiente.mp3" controls autoplay loop>
+        <p>Tu navegador no implementa el elemento audio</p>
+    </audio>
                         </div>
                         <div class="col-sm-4">
                         </div>
