@@ -75,6 +75,7 @@
                                 </canvas>
                             </div>
       <canvas>
+          <!--Alertas-->
              <script>
                  function alerta_auto(){
                      swal({
@@ -257,6 +258,7 @@
                             '<i class="fa fa-thumbs-up"></i> ¡Genial!',
                             confirmButtonAriaLabel: 'Thumbs up, great!',
                             })}
+                 <!--Ruletasegmentos-->
     var miRuleta = new Winwheel({
         'numSegments': 10, // Número de segmentos
         'outerRadius': 270, // Radio externo
@@ -271,7 +273,7 @@
    { 'fillStyle': '#ED3BCD', 'toxt': 'Pensamiento creativo', 'number': '7'},
    { 'fillStyle': '#186FB4', 'toxt': 'Pensamiento crítico', 'number': '8'},
    { 'fillStyle': '#EE3A45', 'toxt': 'Manejo de emociones y sentimientos', 'number': '9'},
-    { 'fillStyle': '#FA7D21', 'toxt': 'Manejo de tensiones y estrés', 'number': '10'},
+   { 'fillStyle': '#FA7D21', 'toxt': 'Manejo de tensiones y estrés', 'number': '10'},
             ],
             'animation': { 
                 'type': 'spinToStop', // Giro y alto
@@ -322,6 +324,7 @@
            miRuleta.draw();
            dibujarIndicador();
        }
+      <!--IndicadorRuleta-->
     dibujarIndicador();
     function dibujarIndicador() {
             var ctx = miRuleta.ctx;
