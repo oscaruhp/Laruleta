@@ -50,18 +50,18 @@
                         <!--Botones-->
                         <div class="d-flex justify-content-start">
                         <div class="container-fluid" class="align-center" style="width: 70%;" >
-                        <button type="button" class="btn btn-verde btn-lg"  onclick="alerta_auto()">Autoconocimiento</button>
+                        <button type="button" class="btn btn-verde btn-lg"  onclick="alerta_auto()"><h5>Autoconocimiento</h5></button>
                         <br />
-                        <button type="button" class="btn btn-azul btn-lg" onclick="alerta_empa()">Empatía</button>
+                        <button type="button" class="btn btn-azul btn-lg" onclick="alerta_empa()"><h5>Empatía</h5></button>
                         <br />
-                        <button type="button" class="btn btn-morado btn-lg" onclick="alerta_coma()">Comunicación asertiva</button>
-                        <button type="button" class="btn btn-mora" onclick="alerta_relai()">Relaciones interpersonales</button>
-                        <button type="button" class="btn btn-green btn-lg" onclick="alerta_tode()">Toma de decisiones</button>
-                        <button type="button" class="btn btn-gr btn-lg" onclick="alerta_mpc()">Manejo de problemas y conflictos</button>
-                        <button type="button" class="btn btn-rose btn-lg" onclick="alerta_penc()">Pensamiento creativo</button>
-                        <button type="button" class="btn btn-navy btn-lg" onclick="alerta_pencri()">Pensamiento crítico</button>
-                        <button type="button" class="btn btn-red btn-lg" onclick="alerta_mes()">Manejo de emociones y sentimientos</button>
-                        <button type="button" class="btn btn-ora btn-lg" onclick="alerta_Mte()">Manejo de tensiones y estrés</button>
+                        <button type="button" class="btn btn-morado btn-lg" onclick="alerta_coma()"><h5>Comunicación asertiva</h5></button>
+                        <button type="button" class="btn btn-mora" onclick="alerta_relai()"><h5>Relaciones interpersonales</h5></button>
+                        <button type="button" class="btn btn-green btn-lg" onclick="alerta_tode()"><h5>Toma de decisiones</h5></button>
+                        <button type="button" class="btn btn-gr btn-lg" onclick="alerta_mpc()"><h5>Manejo de problemas y conflictos</h5></button>
+                        <button type="button" class="btn btn-rose btn-lg" onclick="alerta_penc()"><h5>Pensamiento creativo</h5></button>
+                        <button type="button" class="btn btn-navy btn-lg" onclick="alerta_pencri()"><h5>Pensamiento crítico</h5></button>
+                        <button type="button" class="btn btn-red btn-lg" onclick="alerta_mes()"><h5>Manejo de emociones y sentimientos</h5></button>
+                        <button type="button" class="btn btn-ora btn-lg" onclick="alerta_Mte()"><h5>Manejo de tensiones y estrés</h5></button>
                         </div>
                         </div>
                     </div>
@@ -333,7 +333,7 @@
                 'callbackAfter': 'dibujarIndicador()' // Funciona de pintar indicador
             }
          });
-       function Mensaje() {
+      function Mensaje() {
            var SegmentoSeleccionado =
            winningSegment = miRuleta.getIndicatedSegment();
            swal({
@@ -360,17 +360,18 @@
     case "Descripcion":
           swal({
               title: " ¡ "+winningSegment.toxt+" !",
-              text: " "+winningSegment.number,})
+              text: " "+winningSegment.descripcion,})
               .then((value) => {
               title: " ¡ "+winningSegment.toxt+" !",
-              swal({text: " "+winningSegment.number,});
+              swal({text: " "+winningSegment.actividad,});
           });
       break;
     case "Actividad":
-          swal({title: winningSegment.toxt, text: winningSegment.number,})
+          swal({title: winningSegment.toxt, text: winningSegment.actividad,})
           break;
  
-    ;
+    default:
+      swal("Preciona Girar Ruleta");
   }
 });
            
