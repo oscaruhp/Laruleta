@@ -104,6 +104,7 @@ Jugo de limón
          var ctx ;
          function Mensaje() {
              winningSegment = objRuleta.getIndicatedSegment();
+			 SonidoFinal();
              swal({
                  title: " ¡ "+winningSegment.text+" !",
                
@@ -162,9 +163,11 @@ Jugo de limón
                      'type': 'spinToStop',
                      'duration':4,
                      'spins': 15,
-                     'callbackFinished': 'Mensaje()',
-                     'callbackAfter': 'DibujarTriangulo()'
-                 }
+					 'callbackFinished': 'Mensaje()',
+                     'callbackAfter': 'DibujarTriangulo()' 
+					 
+                 }, 
+				
              });
     
                DibujarTriangulo();
@@ -181,7 +184,13 @@ Jugo de limón
                   DibujarRuleta(ElementosRuleta);
 	     } 
          leerElementos();
-
+		  var audio = new Audio('alarma.mp3');  // Create audio object and load desired file.
+		function SonidoFinal()
+			{
+				audio.pause();
+				audio.currentTime = 0;
+				audio.play();
+			}
  
 </script>
     </div>
