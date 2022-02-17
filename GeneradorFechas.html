@@ -46,17 +46,21 @@ var strSalida="";
     
     console.log(diasSeleccionados);
     
+	var contadorDias=1;
+	
 while (strFechaInicial <= FechaFinal){
     
 
 //var diasSeleccionados = [3,4,6];
+	
   var strFechaInicial = movimientoFechas.toISOString().slice(0,10);
     var FechaTmp=new Date(strFechaInicial);
     if(vMes!=FechaTmp.getMonth()){
       strSalida=strSalida+"<br/><strong>"+nombreMeses[FechaTmp.getMonth()]+" "+FechaTmp.getFullYear()+"</strong><br/>";vMes=FechaTmp.getMonth();
     }
 	if(diasSeleccionados.indexOf(FechaTmp.getDay())>-1){
-		strSalida=strSalida+(diasSemana[FechaTmp.getDay()]+", "+movimientoFechas.getDate()+" "+nombreMeses[FechaTmp.getMonth()]+" de "+FechaTmp.getFullYear()+"<br/>");
+		strSalida=strSalida+contadorDias+".-"+(diasSemana[FechaTmp.getDay()]+", "+movimientoFechas.getDate()+" "+nombreMeses[FechaTmp.getMonth()]+" de "+FechaTmp.getFullYear()+"<br/>");
+		contadorDias++;
 	}
 	movimientoFechas.setDate(movimientoFechas.getDate()+1);
 };
